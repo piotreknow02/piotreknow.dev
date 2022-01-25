@@ -1,0 +1,7 @@
+:root {
+    --bg-color: rgb(39, 39, 39);
+    --text-color: rgb(206, 206, 206);
+    --third-color: rgb(185, 185, 185);
+    --shadow: #111111;
+    --gradient: linear-gradient(252deg, #00ffbd, #fd1d4f, #fcb045, #c4fc45, #6145fc);
+}
