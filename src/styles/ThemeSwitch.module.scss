@@ -1,0 +1,15 @@
+@import "variables";
+
+.themeswitch {
+    border: 2px solid var(--text-color);
+    padding: 5px;
+    border-radius: 9999px;
+    margin: 0px;
+}
+.i {
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    place-items: center;
+    color: var(--text-color);
+}

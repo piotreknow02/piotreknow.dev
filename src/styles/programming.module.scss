@@ -1,0 +1,14 @@
+@import "variables";
+
+.programming {
+    width: 100%;
+    padding: 10vmin;
+}
+.gradienttext {
+    background: var(--gradient);
+    background-size: 800% 800%;
+    background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: navgradient 21s ease infinite;
+}
