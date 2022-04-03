@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
       const theme = cookies.theme;
       if (theme == true) return true
       else if (theme == false) return false
-      else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return true
+      else if(typeof window !== "undefined") { if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return true }
       else return false
   }
   function setTheme(isDark) {

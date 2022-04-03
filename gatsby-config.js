@@ -17,7 +17,17 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-GQH0EX7VV1",
+        head: false,
+        defer: true,
+        enableWebVitalsTracking: true,
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -27,7 +37,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `/static/favicon.ico`,
+        icon: `./static/Logo.png`,
       },
     },
     `gatsby-plugin-offline`,
