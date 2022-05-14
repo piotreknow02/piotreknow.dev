@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-import * as styles from "../styles/cybersec.module.scss";
+import * as styles from "../styles/Cybersec.module.scss";
 
 export default function Cybersec() {
   return (
