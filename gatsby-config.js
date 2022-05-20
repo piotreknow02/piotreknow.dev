@@ -18,6 +18,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-analytics`,

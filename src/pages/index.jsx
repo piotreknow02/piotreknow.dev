@@ -10,10 +10,10 @@ import TitleImg from "../components/TitleImg"
 import profile from "../images/my_profile.jpg"
 
 export default function IndexPage() {
-  return(
-    <Layout>
-      <Seo title="Home" />
-      <TitleImg img={profile} title="Piotreknow" />
-    </Layout>
-  )
+    return (
+        <Layout>
+            <Seo title="Home" />
+            <TitleImg img={profile} title="Piotreknow" />
+        </Layout>
+    )
 }

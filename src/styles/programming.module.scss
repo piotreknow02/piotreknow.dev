@@ -3,6 +3,10 @@
 .programming {
     width: 100%;
     padding: 10vmin;
+    h3
+    {
+        color: var(--text-color);
+    }
 }
 .gradienttext {
     background: var(--gradient);
