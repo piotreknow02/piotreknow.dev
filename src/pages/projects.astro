@@ -1,0 +1,41 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.svelte';
+import ArticlePreview from '../components/ArticlePreview.astro';
+
+const projects = (await Astro.glob('./project/**/*.md'))
+	.filter(({ frontmatter }) => !!frontmatter.publishDate)
+	.sort(
+		(a, b) =>
+			new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
+	);
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="All Projects | Jeanine White"
+			description="Learn about Jeanine White's most recent projects"
+		/>
+		<style>
+			.grid {
+				display: grid;
+				grid-gap: 3rem;
+			}
+			.title {
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper">
+			<div class="grid">
+				{projects.map((project) => <ArticlePreview project={project} />)}
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>
