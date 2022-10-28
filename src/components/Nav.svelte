@@ -41,11 +41,20 @@
 		position: fixed;
 		display: flex;
 		width: 100vw;
-		gap: 8rem;
 		align-items: center;
+		justify-content: space-between;
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 		background-color: var(--c-transparent);
+		padding: 0px 3vmin;
+	}
+	
+	.menu {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 8rem;
 	}
 
 	.link {
@@ -80,11 +89,11 @@
 	.contacts {
 		display: flex;
 		gap: 0.75em;
-		margin-left: auto;
+		margin-right: 4vw;
 	}
 
 	.contact {
-		font-size: 2vmin;
+		font-size: 1.5rem;
 		padding: 1vmin;
 		display: block;
 	}
@@ -103,11 +112,14 @@
 </style>
 
 <nav>
-	<a class="link" href="/">
-		<div class="monogram">piotreknow</div>
-	</a>
-	<a class="link" href="/projects/">Blog</a>
-	<a class="link" href="/about/">About</a>
+	<div class="menu">
+
+		<a class="link" href="/">
+			<div class="monogram">piotreknow</div>
+		</a>
+		<a class="link" href="/blog/">Blog</a>
+		<a class="link" href="/about/">About</a>
+	</div>
 	<div class="contacts">
 		{#each contacts as contact}
 			<a class="contact" href={contact.link}>

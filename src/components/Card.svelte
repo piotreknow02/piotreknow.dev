@@ -9,7 +9,7 @@
         top: 25vh;
         right: 5vw;
         width: 30vw;
-        border-radius: 18px;
+        border-radius: var(--border);
         padding: 4vmin;
         background-color: var(--c-transparent);
         backdrop-filter: blur(20px);

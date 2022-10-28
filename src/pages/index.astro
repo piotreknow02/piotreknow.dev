@@ -7,7 +7,7 @@ import ArticlePreview from '../components/ArticlePreview.astro';
 import Card from '../components/Card.svelte';
 import Icons from '../components/AccountIcons.svelte';
 
-const articles = await Astro.glob('./project/**/*.md');
+const articles = await Astro.glob('./blog/**/*.mdx');
 const numberOfArticles = 3
 const featuredArticles = articles.slice(0, numberOfArticles);
 ---

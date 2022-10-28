@@ -3,6 +3,8 @@ import MainHead from '../components/MainHead.astro';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.svelte';
 
+import moment from 'moment';
+
 const { content } = Astro.props;
 ---
 
@@ -17,7 +19,7 @@ const { content } = Astro.props;
 				background-repeat: no-repeat;
 				background-size: cover;
 				min-height: 25vw;
-				color: white;
+				color: var(--c-white);
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
@@ -26,20 +28,12 @@ const { content } = Astro.props;
 			.tag {
 				margin-left: 0.5em;
 				margin-right: 0.5em;
+				display: inline-block;
+				color: var(--t-bg);
+				background-color: var(--c-white);
+				padding: 0.1rem 0.6rem;
+				border-radius: var(--border);
 				text-transform: uppercase;
-			}
-
-			.tag:nth-of-type(1n) {
-				color: var(--c-green);
-			}
-			.tag:nth-of-type(2n) {
-				color: var(--c-orange);
-			}
-			.tag:nth-of-type(3n) {
-				color: var(--c-blue);
-			}
-			.tag:nth-of-type(4n) {
-				color: var(--c-pink);
 			}
 
 			.title {
@@ -51,14 +45,17 @@ const { content } = Astro.props;
 
 			.leadIn {
 				padding-top: 4em;
-				color: var(--t-bg);
+				max-width: 80em;
+				margin-left: auto;
+				margin-right: auto;
+				color: var(--c-white);
 				background-color: var(--t-bg);
 				text-align: center;
 			}
 
 			.tagline {
 				font-weight: 300;
-				font-size: var(--f-u3);
+				font-size: var(--f-u1);
 				line-height: 1.5;
 			}
 
@@ -69,9 +66,20 @@ const { content } = Astro.props;
 				margin: auto;
 			}
 
-			.wrapper {
-				padding-bottom: 4em;
-				margin-bottom: 4em;
+			.tags {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			
+			.top {
+				max-width: 58em;
+				margin: auto;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
 			}
 
 			footer {
@@ -82,20 +90,26 @@ const { content } = Astro.props;
 	</head>
 	<body>
 		<Nav />
-		<header style={`background-image:url(${content.img})`} class="hero">
+		<header style={`background-image:url("${content.img}")`} class="hero">
 			<h1 class="title">{content.title}</h1>
 		</header>
 		<div class="leadIn">
-			<div class="wrapper">
-				{content.tags.map((t) => <span class="tag">{t}</span>)}
-				<h3 class="tagline">{content.description}</h3>
+			<div class="top">
+				<div class="tags">
+					{content.tags.map((t) => <span class="tag">{t}</span>)}
+				</div>
+				<div class="date">
+					<i class="fas fa-calendar"></i>
+					{moment(new Date(content.publishDate)).fromNow()}
+				</div>
 			</div>
+			<h3 class="tagline">{content.description}</h3>
 		</div>
 		<div class="wrapper">
 			<div class="content"><slot /></div>
 		</div>
 		<footer>
-			<a href="/projects" class="button">View More</a>
+			<a href="/blog" class="button">More articles</a>
 		</footer>
 		<Footer />
 	</body>

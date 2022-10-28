@@ -4,7 +4,7 @@ import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.svelte';
 import ArticlePreview from '../components/ArticlePreview.astro';
 
-const projects = (await Astro.glob('./project/**/*.md'))
+const articles = (await Astro.glob('./blog/**/*.mdx'))
 	.filter(({ frontmatter }) => !!frontmatter.publishDate)
 	.sort(
 		(a, b) =>
@@ -15,8 +15,8 @@ const projects = (await Astro.glob('./project/**/*.md'))
 <html lang="en">
 	<head>
 		<MainHead
-			title="All Projects | Jeanine White"
-			description="Learn about Jeanine White's most recent projects"
+			title="Blog | Piotr Nowakowski"
+			description="Read Piotr Nowakowski's personal blog"
 		/>
 		<style>
 			.grid {
@@ -31,9 +31,10 @@ const projects = (await Astro.glob('./project/**/*.md'))
 	</head>
 	<body>
 		<Nav />
+		<div class="spacer"></div>
 		<div class="wrapper">
 			<div class="grid">
-				{projects.map((project) => <ArticlePreview project={project} />)}
+				{articles.map((article) => <ArticlePreview article={article} />)}
 			</div>
 		</div>
 		<Footer />
