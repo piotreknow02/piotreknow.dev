@@ -18,7 +18,7 @@
 	]
 </script>
 
-<style>
+<style lang="scss">
 	.icons {
 		width: 100vw;
 		display: flex;

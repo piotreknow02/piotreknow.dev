@@ -35,7 +35,7 @@
 	]
 </script>
 
-<style>
+<style lang="scss">
 	nav {
 		z-index: 1000;
 		position: fixed;
@@ -44,6 +44,7 @@
 		gap: 8rem;
 		align-items: center;
 		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
 		background-color: var(--c-transparent);
 	}
 

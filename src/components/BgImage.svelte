@@ -3,7 +3,7 @@
     export let alt;
 </script>
 
-<style>
+<style lang="scss">
     .img-wrapper {
         width: 100vw;
     }
