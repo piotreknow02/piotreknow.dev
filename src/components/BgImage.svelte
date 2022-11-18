@@ -13,6 +13,18 @@
         max-height: 2000px;
         object-fit: cover;
     }
+    @media screen and (max-width: 1200px) {
+        img {
+            min-width: 200vw;
+            max-width: 400vw;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        img {
+            min-width: 300vw;
+            max-width: 600vw;
+        }
+    }
 </style>
 
 <div class="img-wrapper">

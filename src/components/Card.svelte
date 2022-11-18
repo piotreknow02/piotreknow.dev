@@ -4,11 +4,6 @@
 
 <style>
     .card {
-        z-index: 100;
-        position: absolute;
-        top: 25vh;
-        right: 5vw;
-        width: 30vw;
         border-radius: var(--border);
         padding: 4vmin;
         background-color: var(--c-transparent);

@@ -20,6 +20,24 @@ const featuredArticles = articles.slice(0, numberOfArticles);
 			title="Piotr Nowakowski Personal website"
 			description="Piotr Nowakowski: Developer, Ethical Hacker, 3D Graphic Designer, Photographer..."
 		/>
+		<style>
+			main {
+				overflow: hidden;
+			}
+			.bio {
+				overflow: hidden;
+				z-index: 100;
+        		position: absolute;
+       			top: 25vh;
+        		right: 5vw;
+        		width: 30vw;
+			}
+			@media screen and (max-width: 1200px) {
+				.bio {
+					width: 90vw;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Nav />
