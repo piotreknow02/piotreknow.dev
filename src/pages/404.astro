@@ -9,17 +9,21 @@ import Nav from '../components/Nav.svelte';
 		<MainHead title="Not Found" />
 		<style>
 			.wrapper {
-				margin-top: 2em;
-				margin-bottom: 2em;
+				width: 100vw;
+				height: 80vh;
+				display: grid;
+				place-items: center;
+			}
+			img {
+				width: 100%;
 			}
 		</style>
 	</head>
 	<body>
 		<Nav />
 		<div class="wrapper">
-			<h1>Page Not Found</h1>
-			<p>Not found</p>
+			<img src="/assets/images/404.png" alt="404 page not found">
 		</div>
-		<Footer />
+		<Footer/>
 	</body>
 </html>
