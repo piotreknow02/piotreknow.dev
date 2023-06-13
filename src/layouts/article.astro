@@ -1,9 +1,10 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.svelte';
+import MainHead from '../components/MainHead.astro'
+import Footer from '../components/Footer.astro'
+import Nav from '../components/Nav.svelte'
+import ArticleEmblems from '../components/ArticleEmblems.svelte'
 
-import moment from 'moment';
+import moment from 'moment'
 
 const { content } = Astro.props;
 ---
@@ -25,17 +26,6 @@ const { content } = Astro.props;
 				justify-content: center;
 			}
 
-			.tag {
-				margin-left: 0.5em;
-				margin-right: 0.5em;
-				display: inline-block;
-				color: var(--t-bg);
-				background-color: var(--c-white);
-				padding: 0.1rem 0.6rem;
-				border-radius: var(--border);
-				text-transform: uppercase;
-			}
-
 			.title {
 				font-size: var(--f-u10);
 				font-weight: 900;
@@ -43,43 +33,11 @@ const { content } = Astro.props;
 				letter-spacing: 0.0625em;
 			}
 
-			.leadIn {
-				padding-top: 4em;
-				max-width: 80em;
-				margin-left: auto;
-				margin-right: auto;
-				color: var(--c-white);
-				background-color: var(--t-bg);
-				text-align: center;
-			}
-
-			.tagline {
-				font-weight: 300;
-				font-size: var(--f-u1);
-				line-height: 1.5;
-			}
-
 			.content {
 				font-size: var(--f-u1);
 				line-height: 2.2;
 				max-width: 50em;
 				margin: auto;
-			}
-
-			.tags {
-				display: flex;
-				flex-direction: row;
-				justify-content: flex-start;
-				align-items: center;
-			}
-			
-			.top {
-				max-width: 58em;
-				margin: auto;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				align-items: center;
 			}
 
 			footer {
@@ -93,18 +51,7 @@ const { content } = Astro.props;
 		<header style={`background-image:url("${content.img}")`} class="hero">
 			<h1 class="title">{content.title}</h1>
 		</header>
-		<div class="leadIn">
-			<div class="top">
-				<div class="tags">
-					{content.tags.map((t) => <span class="tag">{t}</span>)}
-				</div>
-				<div class="date">
-					<i class="fas fa-calendar"></i>
-					{moment(new Date(content.publishDate)).fromNow()}
-				</div>
-			</div>
-			<h3 class="tagline">{content.description}</h3>
-		</div>
+		<ArticleEmblems client:load publishDate={content.publishDate} description={content.description} tags={content.tags}/>
 		<div class="wrapper">
 			<div class="content"><slot /></div>
 		</div>

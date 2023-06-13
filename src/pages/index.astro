@@ -7,8 +7,6 @@ import ArticlePreview from '../components/ArticlePreview.astro';
 import Card from '../components/Card.svelte';
 import Icons from '../components/AccountIcons.svelte';
 
-import moment from 'moment';
-
 const articles = await Astro.glob('./blog/**/*.mdx');
 const numberOfArticles = 3
 const featuredArticles = articles.slice(0, numberOfArticles);
@@ -48,7 +46,7 @@ const featuredArticles = articles.slice(0, numberOfArticles);
 				<Card>
 					<img src="/assets/images/Piotrek.png" alt="Piotrek">
 					<h2>It's me</h2>
-					<p>It's me I am {moment().diff("2005-07-02", "years")} years old. I have been interested in programming from the age of 12. Then I started learning on my own via the Internet. My first programming language was C#. I started creating 2D and 3D games in Unity. With time, I started to broaden my knowledge and became interested in programming in Python. Later, my interests expanded to include new programs and various issues related to this subject available on the Internet, which led me to the Cybertree programming school, where for several years I have been developing my passions in this field. In addition, I try to constantly expand my programming knowledge by following news and curiosities on the Internet, solving Try hack me tasks or answering questions on Stack Overflow. I try to reconcile my studies with my professional work. I'currently working as backend go developer.</p>
+					<p>It's me I am  years old. I have been interested in programming from the age of 12. Then I started learning on my own via the Internet. My first programming language was C#. I started creating 2D and 3D games in Unity. With time, I started to broaden my knowledge and became interested in programming in Python. Later, my interests expanded to include new programs and various issues related to this subject available on the Internet, which led me to the Cybertree programming school, where for several years I have been developing my passions in this field. In addition, I try to constantly expand my programming knowledge by following news and curiosities on the Internet, solving Try hack me tasks or answering questions on Stack Overflow. I try to reconcile my studies with my professional work. I'currently working as backend go developer.</p>
 					<h2>eat, sleep, CODE</h2>
 					<p>Programming: C#, Python, JavaScript, TypeScript, Go, Rust and more.</p>
 					<p>Skills: Own methods of translating programming concepts developed by tutoring friends. Math and science aren't a problem for me. Easy learner.</p>

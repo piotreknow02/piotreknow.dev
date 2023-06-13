@@ -1,47 +1,42 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.svelte';
+import MainHead from '../components/MainHead.astro'
+import Footer from '../components/Footer.astro'
+import Nav from '../components/Nav.svelte'
 import Card from '../components/Card.svelte'
+import BgImage from '../components/BgImage.svelte';
+
+import moment from 'moment';
 ---
 
 <html lang="en">
 	<head>
 		<MainHead title="About Me | Piotr Nowakowski" description="A little more about me" />
 		<style>
-			.heroImg {
-				max-height: 24rem;
-				object-fit: cover;
-				overflow: hidden;
-			}
 
-			.heroImg img {
-				width: 100%;
-			}
-
-			.bio {
-				font-size: var(--f-u1);
-				line-height: 2;
-				margin-top: 4em;
-			}
-
-			.wrapper.bio {
-				max-width: 50em;
-			}
 		</style>
 	</head>
 	<body>
 		<Nav />
 		<div class="wrapper">
-			<div class="heroImg">
-				<img
-					width="1400"
-					height="350"
-					src="https://images.unsplash.com/photo-1581977012607-4091712d36f9?auto=format&fit=crop&w=1400&h=350&q=75"
-				/>
-			</div>
-			<div class="bio">
-			</div>
+			<Card>
+				<article class="card-side">
+					<img src="/assets/images/Piotrek.png" alt="Piotrek">
+					<h2>It's me</h2>
+					<p>
+						I am {moment().diff("2005-07-02", "years")} years old. I have been interested in programming from the age of 12.
+						Then I started learning on my own via the Internet. My first programming language was C#.
+						I also created 2D and 3D games in Unity. With time, I started to broaden my knowledge and became interested
+						in programming in Python. Later, my interests expanded to include new programs and various issues related
+						to this subject available on the Internet, which led me to the "Cybertree" programming school, where for
+						several years I have been developing my passions in this field. In addition, I try to constantly expand my
+						programming knowledge by following news and curiosities on the Internet, solving Try hack me tasks or 
+						answering questions on Stack Overflow.  I try to reconcile my studies with my professional work.
+					</p>
+					<article class="card-side">
+						<img src="" alt="tree">
+					</article>
+				</Card>
+			</Card>
 		</div>
 		<Footer />
 	</body>
