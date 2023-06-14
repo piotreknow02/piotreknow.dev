@@ -17,12 +17,6 @@
         text-align: center;
     }
 
-    .tagline {
-        font-weight: 300;
-        font-size: var(--f-u1);
-        line-height: 1.5;
-    }
-
     .tags {
         max-width: 70%;
         display: flex;
@@ -40,7 +34,7 @@
         justify-content: space-between;
         align-items: center;
     }
-
+    
     .tag {
         margin: 0.5em;
         display: inline-block;
@@ -50,6 +44,12 @@
         border-radius: var(--border);
         text-transform: uppercase;
     }
+    .desc {
+        text-decoration: underline;
+        font-weight: 300;
+        font-size: var(--f-u4);
+        line-height: 1.5;
+    }
 </style>
 
 <div class="leadIn">
@@ -57,12 +57,12 @@
         <div class="tags">
             {#each tags as t}
                 <span class="tag">{t}</span>
-            {/each} 
+            {/each}
         </div>
         <div class="date">
             <i class="fas fa-calendar"></i>
             {moment(new Date(publishDate)).fromNow()}
         </div>
     </div>
-    <h3 class="tagline">{description}</h3>
+    <h3 class="desc">{description}</h3>
 </div>

@@ -98,6 +98,7 @@ h1 {
 
 .spacer {
 	width: 100%;
+	float: inline-end;
 	height: 15vh;
 }
 

@@ -1,6 +1,10 @@
 <script>
-    export let src;
-    export let alt;
+    export let images = []
+    export let alt
+    export let src = null
+    if (!src) {
+       src = images[Math.floor(Math.random()*images.length)].default
+    }
 </script>
 
 <style lang="scss">

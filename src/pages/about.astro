@@ -6,36 +6,73 @@ import Card from '../components/Card.svelte'
 import BgImage from '../components/BgImage.svelte';
 
 import moment from 'moment';
+
+const images = await Astro.glob("../images/background/*.png")
 ---
 
 <html lang="en">
 	<head>
 		<MainHead title="About Me | Piotr Nowakowski" description="A little more about me" />
 		<style>
-
+			.wrapper {
+				overflow: hidden;
+				z-index: 100;
+        		position: absolute;
+       			top: 60%;
+        		right: 50%;
+				width: 85%;
+				max-width: 90%;
+				transform: translate(50%, -40%);
+			}
+			.card-wrapper {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: top;
+				gap: 5vw;
+			}
+			.card-side {
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: right;
+			}
+			.aboutme {
+				font-size: 1.5em;
+			}
 		</style>
 	</head>
 	<body>
 		<Nav />
+		<div class="bg-wrapper"></div>
+		<BgImage client:load images={images} alt="background"/>
 		<div class="wrapper">
 			<Card>
-				<article class="card-side">
-					<img src="/assets/images/Piotrek.png" alt="Piotrek">
-					<h2>It's me</h2>
-					<p>
-						I am {moment().diff("2005-07-02", "years")} years old. I have been interested in programming from the age of 12.
-						Then I started learning on my own via the Internet. My first programming language was C#.
-						I also created 2D and 3D games in Unity. With time, I started to broaden my knowledge and became interested
-						in programming in Python. Later, my interests expanded to include new programs and various issues related
-						to this subject available on the Internet, which led me to the "Cybertree" programming school, where for
-						several years I have been developing my passions in this field. In addition, I try to constantly expand my
-						programming knowledge by following news and curiosities on the Internet, solving Try hack me tasks or 
-						answering questions on Stack Overflow.  I try to reconcile my studies with my professional work.
-					</p>
+				<div class="card-wrapper">
 					<article class="card-side">
-						<img src="" alt="tree">
+						<img src="/assets/images/Piotrek.png" alt="Piotrek">
+						<h2>It's me</h2>
+						<p class="aboutme">
+							I am {moment().diff("2005-07-02", "years")} years old. I have been interested in programming from the age of 12.
+							Then I started learning on my own via the Internet. My first programming language was C#.
+							I also created 2D and 3D games in Unity. With time, I started to broaden my knowledge and became interested
+							in programming in Python. Later, my interests expanded to include new programs and various issues related
+							to this subject available on the Internet, which led me to the "Cybertree" programming school, where for
+							several years I have been developing my passions in this field. In addition, I try to constantly expand my
+							programming knowledge by following news and curiosities on the Internet, solving Try hack me tasks or 
+							answering questions on Stack Overflow. I try to reconcile my studies with my professional work.
+						</p>
 					</article>
-				</Card>
+					<article class="card-side">
+						<img src="/assets/images/tree.png" alt="tree">
+						<h2>eat, sleep, CODE</h2>
+						<p>Programming: Go, Python, JavaScript, TypeScript, C#, Rust and more</p>
+						<p>Development environments: Visual Studio, Visual Studio Code, Android Studio, Unity.</p>
+						<p>Own methods of translating programming concepts developed by tutoring friends. Math and science aren't a problem for me.</p>
+						<p>What distinguishes me: I am not interested in computer games or sports.</p>
+					</article>
+				</div>
 			</Card>
 		</div>
 		<Footer />

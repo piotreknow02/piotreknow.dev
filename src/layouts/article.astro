@@ -11,7 +11,7 @@ const { content } = Astro.props;
 
 <html lang={content.lang || 'en'}>
 	<head>
-		<MainHead title={content.title} description={content.description} />
+		<MainHead title={content.title} description={content.description} keywords={content.tags}/>
 		<style>
 			.hero {
 				padding: 8rem;
