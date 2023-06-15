@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro'
 import Nav from '../components/Nav.svelte'
 import Card from '../components/Card.svelte'
 import BgImage from '../components/BgImage.svelte';
+import AccountIcons from '../components/AccountIcons.svelte';
 
 import moment from 'moment';
 
@@ -22,7 +23,7 @@ const images = await Astro.glob("../images/background/*.png")
         		right: 50%;
 				width: 85%;
 				max-width: 90%;
-				transform: translate(50%, -40%);
+				transform: translate(50%, -50%);
 			}
 			.card-wrapper {
 				display: flex;
@@ -74,6 +75,7 @@ const images = await Astro.glob("../images/background/*.png")
 					</article>
 				</div>
 			</Card>
+			<AccountIcons/>
 		</div>
 		<Footer />
 	</body>

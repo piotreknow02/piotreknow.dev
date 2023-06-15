@@ -3,10 +3,10 @@ const { frontmatter, url } = Astro.props.article;
 ---
 
 <div class="card">
-	<div class="titleCard" style={`background-image:url(${frontmatter.img})`}>
+	<div class="title-card" style={`background-image:url(${frontmatter.img})`}>
 		<h1 class="title">{frontmatter.title}</h1>
 	</div>
-	<div class="descCard">
+	<div class="desc-card">
 		<p class="desc">{frontmatter.description}</p>
 		<div class="tags">
 			Tagged:
@@ -17,7 +17,7 @@ const { frontmatter, url } = Astro.props.article;
 			))}
 		</div>
 		<a class="link" href={url}>
-			<span class="linkInner">Read</span>
+			<span class="link-inner">Read</span>
 		</a>
 	</div>
 </div>
@@ -49,14 +49,14 @@ const { frontmatter, url } = Astro.props.article;
 		letter-spacing: 0.0625em;
 	}
 
-	.titleCard {
+	.title-card {
 		position: relative;
 		background-size: cover;
 		background-position: 50% 100%;
 		padding-top: 37.5%;
 	}
 
-	.descCard {
+	.desc-card {
 		padding: 1.5em;
 	}
 
@@ -93,12 +93,12 @@ const { frontmatter, url } = Astro.props.article;
 	}
 
 	.link:focus,
-	.link:hover .linkInner {
+	.link:hover .link-inner {
 		transform: translateY(0);
 		border-color: var(--t-fg);
 	}
 
-	.linkInner {
+	.link-inner {
 		padding: 0.375em 1em;
 		color: var(--t-fg);
 		border: 2px solid var(--t-fg);

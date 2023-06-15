@@ -19,6 +19,9 @@ const articles = (await Astro.glob('./blog/**/*.mdx'))
 			description="Read Piotr Nowakowski's personal blog"
 		/>
 		<style>
+			.body {
+				background-color: black !important;
+			}
 			.grid {
 				display: grid;
 				grid-gap: 3rem;

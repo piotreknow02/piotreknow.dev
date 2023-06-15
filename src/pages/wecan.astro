@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro'
 import Nav from '../components/Nav.svelte'
 import Card from '../components/Card.svelte'
 import BgImage from '../components/BgImage.svelte';
+import AccountIcons from '../components/AccountIcons.svelte';
 
 import moment from 'moment';
 
@@ -85,6 +86,7 @@ const images = await Astro.glob("../images/background/*.png")
 					</article>
 				</div>
 			</Card>
+			<AccountIcons/>
 		</div>
 		<Footer />
 	</body>

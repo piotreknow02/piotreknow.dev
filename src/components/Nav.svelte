@@ -30,6 +30,7 @@
 		text-transform: uppercase;
 		padding-top: 0.75em;
 		padding-bottom: 0.75em;
+		box-shadow: 0px 0px 0px var(--t-active);
 	}
 
 	.link:hover,
@@ -52,6 +53,9 @@
 		font-weight: normal;
 	}
 
+	.middle-icon {
+		transform: translate(300%, 0%);
+	}
 
 	i {
 		font-size: 3em;
@@ -62,7 +66,7 @@
 	<a class="link noshadow" href="/">
 		<div class="monogram">piotreknow</div>
 	</a>
-	<a href="https://github.com/piotreknow02">
+	<a class="middle-icon" href="https://github.com/piotreknow02">
 		<i class="fa-brands fa-github" title="github"></i>
 	</a>
 	<div class="menu">

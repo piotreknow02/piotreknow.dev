@@ -1,11 +1,6 @@
 <script>
     let accounts = [
 		{
-			name: "messenger",
-			link: "https://m.me/piotrek.nowakowski.982",
-			icon: "fa-brands fa-facebook-messenger",
-		},
-		{
 			email: "email",
 			link: "mailto:kontakt@piotreknow.ml",
 			icon: "fa-regular fa-envelope",
@@ -14,6 +9,11 @@
 			name: "telegram",
 			link: "https://t.me/piotreknow",
 			icon: "fa-brands fa-telegram",
+		},
+		{
+			name: "messenger",
+			link: "https://m.me/piotrek.nowakowski.982",
+			icon: "fa-brands fa-facebook-messenger",
 		},
 		{
 			name: "discord",
@@ -35,11 +35,13 @@
 
 <style>
 	.icons {
-		width: 100vw;
+		width: 20vw;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: flex-start;
 		font-size: 4rem;
+		gap: 4vmin;
+		margin: 50px 0px;
 	}
 	.socialIcon {
 		display: block;
@@ -49,7 +51,7 @@
 		transition: fill linear 150ms;
 	}
 	i {
-		padding: 6vmax;
+		padding: .8vmax;
 	}
 </style>
 
