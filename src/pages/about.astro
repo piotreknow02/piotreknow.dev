@@ -16,13 +16,12 @@ const images = await Astro.glob("../images/background/*.png")
 		<MainHead title="About Me | Piotr Nowakowski" description="A little more about me" />
 		<style>
 			.wrapper {
-				overflow: hidden;
 				z-index: 100;
         		position: absolute;
-       			top: 60%;
+       			top: 80vh;
         		right: 50%;
 				width: 85%;
-				max-width: 90%;
+				max-width: 80%;
 				transform: translate(50%, -50%);
 			}
 			.card-wrapper {
@@ -31,6 +30,22 @@ const images = await Astro.glob("../images/background/*.png")
 				justify-content: center;
 				align-items: top;
 				gap: 5vw;
+			}
+			@media screen and (max-width: 1200px) {
+				.wrapper {
+					top: 90vh;
+				}
+				.aboutme {
+					font-size: .5em;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.wrapper {
+					top: 140vh;
+				}
+				.aboutme {
+					font-size: .3em;
+				}
 			}
 			.card-side {
 				width: 50%;

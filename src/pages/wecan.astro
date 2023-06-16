@@ -6,8 +6,6 @@ import Card from '../components/Card.svelte'
 import BgImage from '../components/BgImage.svelte';
 import AccountIcons from '../components/AccountIcons.svelte';
 
-import moment from 'moment';
-
 const images = await Astro.glob("../images/background/*.png")
 ---
 
@@ -19,7 +17,7 @@ const images = await Astro.glob("../images/background/*.png")
 				overflow: hidden;
 				z-index: 100;
         		position: absolute;
-       			top: 60%;
+       			top: 70vh;
         		right: 50%;
 				width: 85%;
 				max-width: 90%;
@@ -32,7 +30,21 @@ const images = await Astro.glob("../images/background/*.png")
 				align-items: top;
 				gap: 5vw;
 			}
-			.card-side {
+			@media screen and (max-width: 1200px) {
+				.wrapper {
+					top: 90vh;
+				}
+				p {
+					font-size: .5em;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				.wrapper {
+					top: 100vh;
+				}
+				p {
+					font-size: .3em;
+				}
 			}
 			.aboutme {
 				font-size: 1.5em;
