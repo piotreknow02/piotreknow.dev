@@ -1,3 +1,11 @@
+<script>
+	let mobileMenu
+
+	function toggleMenu() {
+		mobileMenu.classList.toggle("disabled")
+	} 
+</script>
+
 <style lang="scss">
 	nav {
 		z-index: 1000;
@@ -11,6 +19,7 @@
 		background-color: var(--c-transparent);
 		padding: 0px 5vmin 0px 0px;
 		box-sizing: border-box;
+		transition: all 1s ease;
 	}
 	
 	.menu {
@@ -19,6 +28,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 8rem;
+		transition: all 1s ease;
 	}
 
 	.link {
@@ -60,20 +70,71 @@
 	i {
 		font-size: 3em;
 	}
+	.hamburger {
+		display: none;
+	}
+	.line {
+		height: 3px;
+		width: 30px;
+		background-color: white;
+	}
+	.mobile {
+		height: 0px;
+	}
+	@media screen and (max-width: 1000px) {
+		.hamburger {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+			width: 30px;
+			height: 30px;
+		}
+		.desktop {
+			display: none;
+		}
+		.mobile {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+		.middle-icon {
+			transform: none;
+		}
+		.menu {
+			height: 100vh;
+		}
+		.disabled {
+			height: 0px;
+			transform: translate(0px, -500px);
+		}
+	}
 </style>
 
 <nav>
 	<a class="link noshadow" href="/">
 		<div class="monogram">piotreknow</div>
 	</a>
-	<a class="middle-icon" href="https://github.com/piotreknow02">
+	<div role="button" on:click={toggleMenu} class="hamburger">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
+	<a class="desktop middle-icon" href="https://github.com/piotreknow02">
 		<i class="fa-brands fa-github" title="github"></i>
 	</a>
-	<div class="menu">
-
+	<div class="desktop menu">
 		<a class="link" href="/blog/">Blog</a>
 		<a class="link" href="/about/">About</a>
 		<a class="link" href="/wecan">w<b>ec</b>an</a>
 	</div>
 </nav>
+<div bind:this={mobileMenu} class="disabled mobile menu">
+	<a class="link" href="/blog/">Blog</a>
+	<a class="link" href="/about/">About</a>
+	<a class="link" href="/wecan">w<b>ec</b>an</a>
+	<a class="middle-icon" href="https://github.com/piotreknow02">
+		<i class="fa-brands fa-github" title="github"></i>
+	</a>
+</div>
 
