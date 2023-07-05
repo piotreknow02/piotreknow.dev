@@ -10,6 +10,7 @@
 <style lang="scss">
     .img-wrapper {
         width: 100vw;
+        overflow: hidden;
     }
     img {
         max-width: 100vw;

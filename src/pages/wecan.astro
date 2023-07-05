@@ -30,9 +30,13 @@ const images = await Astro.glob("../images/background/*.png")
 				align-items: top;
 				gap: 5vw;
 			}
+			main {
+				position: relative;
+			}
 			@media screen and (max-width: 1200px) {
 				.wrapper {
 					top: 90vh;
+					font-size: 1em;
 				}
 				p {
 					font-size: .5em;
@@ -40,15 +44,15 @@ const images = await Astro.glob("../images/background/*.png")
 			}
 			@media screen and (max-width: 768px) {
 				.wrapper {
-					top: 100vh;
+					top: 80vh;
 				}
 				p {
 					font-size: .3em;
 				}
 			}
-			.aboutme {
+			/* .aboutme {
 				font-size: 1.5em;
-			}
+			} */
             img {
                 float: right;
             }
@@ -66,40 +70,41 @@ const images = await Astro.glob("../images/background/*.png")
 	</head>
 	<body>
 		<Nav client:load/>
-		<div class="bg-wrapper"></div>
-		<BgImage client:load images={images} alt="background"/>
-		<div class="wrapper">
-			<Card>
-				<div class="card-wrapper">
-					<article class="card-side">
-                        <h2>Hello there</h2>
-                        <img src="/assets/images/robot.png" alt="Piotrek">
-						<p>
-                            Are you interested in building innovative tech solutions? Or maybe you're
-                            intrigued by the endless possibilities of the digital world? If so,
-                            you're in the right place!
-                        </p>
-                        <p>
-                            I'm a young, passionate programmer with a knack for turning ideas into reality.
-                            With a wide array of programming languages under my belt and a zeal for
-                            learning more, I'm always excited to take on new challenges.
-                        </p>
-                        <p>If you have an idea that needs a programming touch or simply wish to discuss
-                            the latest tech trends, feel free to reach out. Whether it's a complex problem
-                            that needs solving, a fun project you want to bring to life, or a simple
-                            curiosity about the world of coding, I'm all ears!
-                        </p>
-                        <p>
-                            Don't hesitate to get in touch via the contact form below or drop me an email at
-                            <a href="mailto:kontakt@piotreknow.ml">kontakt@piotreknow.ml</a>. I am always
-                            excited to meet new people, share ideas, and build something amazing together.
-                        </p>
-                        <h4>Let's code the future!</h4>
-					</article>
-				</div>
-			</Card>
-			<AccountIcons/>
-		</div>
-		<Footer />
+		<main>
+			<BgImage client:load images={images} alt="background"/>
+			<div class="wrapper">
+				<Card>
+					<div class="card-wrapper">
+						<article class="card-side">
+							<h2>Hello there</h2>
+							<img src="/assets/images/robot.png" alt="Piotrek">
+							<p>
+								Are you interested in building innovative tech solutions? Or maybe you're
+								intrigued by the endless possibilities of the digital world? If so,
+								you're in the right place!
+							</p>
+							<p>
+								I'm a young, passionate programmer with a knack for turning ideas into reality.
+								With a wide array of programming languages under my belt and a zeal for
+								learning more, I'm always excited to take on new challenges.
+							</p>
+							<p>If you have an idea that needs a programming touch or simply wish to discuss
+								the latest tech trends, feel free to reach out. Whether it's a complex problem
+								that needs solving, a fun project you want to bring to life, or a simple
+								curiosity about the world of coding, I'm all ears!
+							</p>
+							<p>
+								Don't hesitate to get in touch via the contact form below or drop me an email at
+								<a href="mailto:kontakt@piotreknow.ml">kontakt@piotreknow.ml</a>. I am always
+								excited to meet new people, share ideas, and build something amazing together.
+							</p>
+							<h4>Let's code the future!</h4>
+						</article>
+					</div>
+				</Card>
+				<AccountIcons/>
+			</div>
+			<Footer />
+		</main>
 	</body>
 </html>

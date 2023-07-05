@@ -56,6 +56,7 @@
 
 body {
 	margin: 0;
+	scroll-behavior: smooth;
 	color: var(--t-fg);
 	background-color: var(--t-bg);
 	font-family: 'Inter', 'system-ui', sans-serif;

@@ -2,6 +2,7 @@
 	let mobileMenu
 
 	function toggleMenu() {
+		scrollTo(0, 0)
 		mobileMenu.classList.toggle("disabled")
 	} 
 </script>
@@ -94,6 +95,7 @@
 			display: none;
 		}
 		.mobile {
+			padding-top: 15vh;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -102,9 +104,11 @@
 			transform: none;
 		}
 		.menu {
-			height: 100vh;
+			height: 80vh;
 		}
 		.disabled {
+			padding: 0px;
+			margin: 0px;
 			height: 0px;
 			transform: translate(0px, -500px);
 		}
@@ -115,7 +119,7 @@
 	<a class="link noshadow" href="/">
 		<div class="monogram">piotreknow</div>
 	</a>
-	<div role="button" on:click={toggleMenu} class="hamburger">
+	<div role="button" tabindex="0" on:click={toggleMenu} class="hamburger">
 		<div class="line"></div>
 		<div class="line"></div>
 		<div class="line"></div>

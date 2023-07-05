@@ -35,30 +35,32 @@
 
 <style>
 	.icons {
-		width: 20vw;
+		width: 90vw;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		font-size: 4rem;
-		gap: 4vmin;
-		margin: 50px 0px;
+		font-size: 7vmin;
+		gap: 2vmin;
+		margin: 1vmax 0px;
 	}
-	.socialIcon {
+	.social-icon {
 		display: block;
-		width: 1.25rem;
-		height: 1.25rem;
-		fill: var(--t-subdue);
+		/* width: 1.25rem;
+		height: 1.25rem; */
+		text-decoration: none !important;
+		color: var(--t-fg);
 		transition: fill linear 150ms;
 	}
 	i {
-		padding: .8vmax;
+		text-decoration: none;
+		padding: .6vmax;
 	}
 </style>
 
 <div class="icons">
     {#each accounts as account}
         <a href={account.link}>
-            <i class={account.icon} title={account.name}>
+            <i class={"social-icon " + account.icon} title={account.name}>
         </a>
     {/each}
 </div>
