@@ -21,6 +21,12 @@
 			icon: "fa-brands fa-discord",
 		},
 		{
+			name: "linkedin",
+			link: "https://www.linkedin.com/in/piotreknow/",
+			icon: "fa-brands fa-linkedin",
+
+		},
+		{
 			name: "try hack me",
 			link: "https://tryhackme.com.p/piotreknow",
 			icon: "fa-solid fa-robot",
