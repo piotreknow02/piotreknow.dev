@@ -2,7 +2,7 @@
     let accounts = [
 		{
 			email: "email",
-			link: "mailto:kontakt@piotreknow.ml",
+			link: "mailto:kontakt@piotreknow.dev",
 			icon: "fa-regular fa-envelope",
 		},
 		{

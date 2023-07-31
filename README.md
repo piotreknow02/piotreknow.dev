@@ -1,3 +1,3 @@
-# piotreknow.ml
+# piotreknow.dev
 
 My portfolio website
